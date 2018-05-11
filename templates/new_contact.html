@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Create a new contact{% endblock %}
+
+{% block content %}
+  <form method="post" novalidate>
+	{% csrf_token %}
+	{% include 'includes/form.html' %}
+
+	<button type="submit" class="btn btn-success">Save</button>
+  </form>
+{% endblock %}

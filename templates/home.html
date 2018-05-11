@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="row">
+
+	<div class="my-4">
+		<a href="{% url 'new_contact' %}" class="btn btn-primary">New contact</a>
+	</div>
+
+
+	<table class="table">
+		<thead class="thead-light">
+			<tr>
+				<th>Contact name</th>
+				<th>Last contacted</th>
+				<th>Contacted Today</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for contact in contacts %}
+			<tr>
+				<td>
+					<a href="{% url 'contacts' contact.pk %}">{{ contact.contact_name }}</a>
+					<small class="text-muted d-block">{{ contact.contact_info|linebreaks }}</small>
+				</td>
+				<td> {{ contact.last_contacted }} </td>
+				<td>
+					
+					<button type="submit" class="btn btn-outline-secondary">Contacted Today</button>
+
+				</td>
+			</tr>
+			{% endfor %}
+
+		</tbody>
+
+	</table>
+
+	</div>
+
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {{ contact.contact_name }} 
+{% endblock title %}
+
+{% block content %}
+    <h1>{{ contact.contact_name }}</h1>
+    <table class="table">
+      <tr>
+        <td>{{ contact.contact_info }} </td>
+      </tr>
+      <tr>
+        <td>{{ contact.last_contacted }} </td>
+      </tr>
+{% endblock content %}
